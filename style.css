@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* SERD theme (taken from the SERD web app) */
+:root {
+    --primary: #B41A46;
+    --primary-dark: #8f1438;
+    --tint: #F9E8EC;
+    --bg: #FAFAFA;
+    --white: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #f1f1f4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+::selection { background: var(--tint); color: var(--primary); }
+
+/* ---------- Login page ---------- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--white);
+}
+
+.login-box { width: 100%; max-width: 380px; padding: 24px; text-align: center; }
+
+.login-box h1 {
+    font-size: 48px;
+    color: var(--primary);
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+}
+
+.subtitle { font-size: 14px; color: var(--muted); font-weight: 500; margin-bottom: 28px; }
+
+.login-box form { text-align: left; }
+
+/* ---------- Forms ---------- */
+label { display: block; margin: 14px 0 6px; font-weight: 600; font-size: 13px; color: var(--muted); }
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: #fcfcfd;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    background: var(--white);
+    border-color: rgba(180, 26, 70, 0.25);
+    box-shadow: 0 0 0 4px rgba(180, 26, 70, 0.07);
+}
+
+button {
+    margin-top: 22px;
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(180, 26, 70, 0.25);
+    transition: transform 0.15s;
+}
+
+button:active { transform: scale(0.98); }
+button:hover { background: var(--primary-dark); }
+
+/* ---------- Messages ---------- */
+.alert, .success {
+    padding: 12px 14px;
+    border-radius: 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    text-align: left;
+}
+.alert { background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; }
+.success { background: var(--tint); border: 1px solid #f3c6d1; color: var(--primary); }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.navbar h2 { color: var(--primary); font-size: 26px; letter-spacing: -1px; }
+
+.logout {
+    margin-left: 12px;
+    color: var(--primary);
+    background: var(--tint);
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* ---------- Layout ---------- */
+.container { max-width: 1000px; margin: 28px auto; padding: 0 16px; }
+
+.card {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 24px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.card h3 { margin-bottom: 6px; font-size: 18px; }
+
+/* ---------- Table ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+th { background: var(--tint); color: var(--primary); text-align: left; padding: 12px; font-size: 13px; }
+th:first-child { border-radius: 12px 0 0 12px; }
+th:last-child { border-radius: 0 12px 12px 0; }
+td { padding: 12px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #fcfcfd; }
+
+/* ---------- Status badges ---------- */
+.badge { padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.pending { background: #fef3c7; color: #d97706; }
+.dispatched { background: #dbeafe; color: #2563eb; }
+.resolved { background: #dcfce7; color: #16a34a; }
